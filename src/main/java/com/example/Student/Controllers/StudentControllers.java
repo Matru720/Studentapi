@@ -37,6 +37,12 @@ public class StudentControllers {
         return new ResponseEntity<>(new ApiResponse("Student deleted Successfully", true),HttpStatus.OK);
     }
 
+    @DeleteMapping("/")
+    public ResponseEntity<ApiResponse> deleteAllStudents() {
+         this.studentService.deleteAllStudents();
+        return new ResponseEntity<>(new ApiResponse("All students deleted Successfully", true), HttpStatus.OK);
+    }
+
 
     @GetMapping("/")
     public ResponseEntity<List<StudentDto>> getAllStudent(){

@@ -63,6 +63,10 @@ public class Studentimple implements StudentService {
         this.studentRepo.delete(student);
     }
 
+    public void deleteAllStudents() {
+        studentRepo.deleteAll();
+    }
+
     public Student dtoToStudent(StudentDto studentDto){
         Student student = this.modelMapper.map(studentDto,Student.class);
         return student;
